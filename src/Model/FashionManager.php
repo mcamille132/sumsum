@@ -35,8 +35,16 @@ class FashionManager extends AbstractManager
     public function insert(array $fashion): int
     {
         // prepared request
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`) VALUES (:name)");
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " 
+        (`name`, `url`, `creator`, `nb_vote`, `baseline`, `localisation`, `comments`) 
+        VALUES (:name, :url, :creator, :nb_vote, :baseline, :localisation, :comments)");
         $statement->bindValue('name', $fashion['name'], \PDO::PARAM_STR);
+        $statement->bindValue('url', $fashion['url'], \PDO::PARAM_STR);
+        $statement->bindValue('creator', $fashion['creator'], \PDO::PARAM_STR);
+        $statement->bindValue('nb_vote', $fashion['nb_vote'], \PDO::PARAM_INT);
+        $statement->bindValue('baseline', $fashion['baseline'], \PDO::PARAM_STR);
+        $statement->bindValue('localisation', $fashion['localisation'], \PDO::PARAM_STR);
+        $statement->bindValue('comments', $fashion['comments'], \PDO::PARAM_STR);
 
         if ($statement->execute()) {
             return (int)$this->pdo->lastInsertId();
@@ -64,9 +72,15 @@ class FashionManager extends AbstractManager
     {
 
         // prepared request
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `name` = :name WHERE id=:id");
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `name`=:name, `url`=:url, `creator`=:creator, `nb_vote`=:nb_vote, `baseline`=:baseline, `localisation`=:localisation, `comments`=:comments WHERE id=:id");
         $statement->bindValue('id', $fashion['id'], \PDO::PARAM_INT);
         $statement->bindValue('name', $fashion['name'], \PDO::PARAM_STR);
+        $statement->bindValue('url', $fashion['url'], \PDO::PARAM_STR);
+        $statement->bindValue('creator', $fashion['creator'], \PDO::PARAM_STR);
+        $statement->bindValue('nb_vote', $fashion['nb_vote'], \PDO::PARAM_INT);
+        $statement->bindValue('baseline', $fashion['baseline'], \PDO::PARAM_STR);
+        $statement->bindValue('localisation', $fashion['localisation'], \PDO::PARAM_STR);
+        $statement->bindValue('comments', $fashion['comments'], \PDO::PARAM_STR);
 
         return $statement->execute();
     }
