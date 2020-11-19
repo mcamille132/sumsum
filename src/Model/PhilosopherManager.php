@@ -37,11 +37,10 @@ class PhilosopherManager extends AbstractManager
     {
         // prepared request
         $statement = $this->pdo->prepare("
-        INSERT INTO " . self::TABLE . " (`name`, `url`, `quote`, `nb_vote`, `style`, `nationality`, `job`, `comments`, `artist`) 
-        VALUES (:name, :url, :quote, :nb_vote, :style, :nationality, :job, :comments, :artist)");
+        INSERT INTO " . self::TABLE . " (`name`, `url`,  `nb_vote`, `style`, `nationality`, `job`, `comments`, `artist`) 
+        VALUES (:name, :url, :nb_vote, :style, :nationality, :job, :comments, :artist)");
         $statement->bindValue('name', $philosopher['name'], \PDO::PARAM_STR);
         $statement->bindValue('url', $philosopher['url'], \PDO::PARAM_STR);
-        $statement->bindValue('quote', $philosopher['quote'], \PDO::PARAM_STR);
         $statement->bindValue('nb_vote', $philosopher['nb_vote'], \PDO::PARAM_INT);
         $statement->bindValue('style', $philosopher['style'], \PDO::PARAM_STR);
         $statement->bindValue('nationality', $philosopher['nationality'], \PDO::PARAM_STR);
@@ -75,11 +74,10 @@ class PhilosopherManager extends AbstractManager
     {
         // prepared request
         $statement = $this->pdo->prepare("UPDATE " . self::TABLE . 
-        "SET `name` = :name, `url` = :url, `quote` = :quote, `nb_vote` = :nb_vote, `style` = :style, `nationality` = :nationality, `job` = :job, `comments` = :comments, `artist` =:artist WHERE id=:id");
+        "SET `name` = :name, `url` = :url, `nb_vote` = :nb_vote, `style` = :style, `nationality` = :nationality, `job` = :job, `comments` = :comments, `artist` =:artist WHERE id=:id");
         $statement->bindValue('id', $philosopher['id'], \PDO::PARAM_INT);
         $statement->bindValue('name', $philosopher['name'], \PDO::PARAM_STR);
         $statement->bindValue('url', $philosopher['url'], \PDO::PARAM_STR);
-        $statement->bindValue('quote', $philosopher['quote'], \PDO::PARAM_STR);
         $statement->bindValue('nb_vote', $philosopher['nb_vote'], \PDO::PARAM_INT);
         $statement->bindValue('style', $philosopher['style'], \PDO::PARAM_STR);
         $statement->bindValue('nationality', $philosopher['nationality'], \PDO::PARAM_STR);
@@ -89,5 +87,10 @@ class PhilosopherManager extends AbstractManager
         
 
         return $statement->execute();
+    }
+    
+    public function getTop(): array
+    {
+       return $this->pdo->query("SELECT * FROM " . self::TABLE . " ORDER BY nb_vote DESC LIMIT 0,3")->fetchAll();
     }
 }

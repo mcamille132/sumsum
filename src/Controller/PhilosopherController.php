@@ -69,7 +69,6 @@ class PhilosopherController extends AbstractAPIController
                     'id' => $id,
                     'name' => $_POST['name'],
                     'url' => $_POST['url'],
-                    'quote' => $_POST['quote'],
                     'nb_vote' => $_POST['nb_vote'],
                     'style' => $_POST['style'],
                     'nationality' => $_POST['nationality'],
@@ -102,7 +101,6 @@ class PhilosopherController extends AbstractAPIController
                 $philosopher = [
                     'name' => $_POST['name'],
                     'url' => $_POST['url'],
-                    'quote' => $_POST['quote'],
                     'nb_vote' => $_POST['nb_vote'],
                     'style' => $_POST['style'],
                     'nationality' => $_POST['nationality'],
