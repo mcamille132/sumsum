@@ -7,6 +7,7 @@
  */
 
 namespace App\Controller;
+use App\Model\PaintingManager;
 
 class HomeController extends AbstractAPIController
 {
@@ -21,6 +22,7 @@ class HomeController extends AbstractAPIController
      */
     public function index()
     {
-        return $this->twig->render('Home/index.html.twig');
+        $paintingManager = new PaintingManager();
+        return json_encode($paintingManager->getTop());
     }
 }

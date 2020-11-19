@@ -81,4 +81,11 @@ class PaintingManager extends AbstractManager
 
         return $statement->execute();
     }
+
+    public function getTop(): array
+    {
+       return $this->pdo->prepare("SELECT * FROM " . self::TABLE . " ORDER BY nb_vote DESC LIMIT 0,3")->fectAll();
+
+
+    }
 }
