@@ -26,7 +26,7 @@ class PaintingController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function index()
+    public function all()
     {
         $paintingManager = new PaintingManager();
         $paintings = $paintingManager->selectAll();
@@ -50,6 +50,7 @@ class PaintingController extends AbstractController
         $painting = $paintingManager->selectOneById($id);
 
         return json_encode($paintingManager->selectOneById());
+        
     }
 
 
@@ -65,11 +66,11 @@ class PaintingController extends AbstractController
     public function edit(int $id): string
     {
         $paintingManager = new PaintingManager();
+        $painting = $paintingManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {
                 $painting = [
-                    'id' => $id,
                     'name' => $_POST['name'],
                     'url' => $_POST['url'],
                     'artist' => $_POST['artist'],
@@ -78,8 +79,9 @@ class PaintingController extends AbstractController
                     'nationality' => $_POST['nationality'],
                     'comments' => $_POST['comments']
                 ];
-                $studentManager->update($painting);
+                $paintingManager->update($painting);
                 return json_encode($id. "updated", 200);
+                
             } catch (Exception $e) {
                 return json_encode($e->getMessage());
             }
@@ -130,6 +132,7 @@ class PaintingController extends AbstractController
         try {
             $paintingManager = new PaintingManager();
             return json_encode($id. "deleted", 200);
+            header('Location:/painting/index');
         } catch (Exception $e) {
             return json_encode($e->getMessage());
         }
