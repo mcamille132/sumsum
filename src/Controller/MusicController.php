@@ -18,7 +18,7 @@ use App\Model\MusicManager;
  * Class MusicController
  *
  */
-class MusicController extends AbstractController
+class MusicController extends AbstractAPIController
 {
     /**
      * Display music listing

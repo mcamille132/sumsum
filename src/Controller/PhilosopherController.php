@@ -17,7 +17,7 @@ use Exception;
  * Class ItemController
  *
  */
-class PhilosopherController extends AbstractController
+class PhilosopherController extends AbstractAPIController
 {
     /**
      * Display item listing
@@ -110,7 +110,7 @@ class PhilosopherController extends AbstractController
                 ];
                 $id = $philosopherManager->insert($philosopher);
                 return json_encode($id, 200);
-            } catch (Exeption $e) {
+            } catch (Exception $e) {
                 return json_encode($e->getMessage());
             }
         }
