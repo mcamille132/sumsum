@@ -31,7 +31,7 @@ class FashionController extends AbstractController
     public function all()
     {
         $fashionManager = new FashionManager();
-        return json_encode ($fashionManager->selectAll());
+        return json_encode($fashionManager->selectAll());
     }
 
 
@@ -44,10 +44,10 @@ class FashionController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function show(int $id)
+    public function show($id)
     {
         $fashionManager = new FashionManager();
-        return json_encode ($fashionManager->selectOneById($id));
+        return json_encode($fashionManager->selectOneById($id));
     }
 
 
@@ -60,13 +60,13 @@ class FashionController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function edit(int $id): string
+    public function edit($id): string
     {
         $fashionManager = new FashionManager();
+        $fashionManager->selectOneById($id);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {
                 $fashion = [
-                    'id' => $id,
                     'name' => $_POST['name'],
                     'url' => $_POST['url'],
                     'creator' => $_POST['creator'],
@@ -120,7 +120,7 @@ class FashionController extends AbstractController
      *
      * @param int $id
      */
-    public function delete(int $id)
+    public function delete($id)
     {
         $fashionManager = new FashionManager();
         try {
