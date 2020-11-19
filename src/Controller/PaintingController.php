@@ -11,6 +11,7 @@
 namespace App\Controller;
 
 use App\Model\PaintingManager;
+use Exception;
 
 /**
  * Class ItemController
@@ -49,7 +50,7 @@ class PaintingController extends AbstractController
         $paintingManager = new PaintingManager();
         $painting = $paintingManager->selectOneById($id);
 
-        return json_encode($paintingManager->selectOneById());
+        return json_encode($paintingManager->selectOneById($id));
         
     }
 
