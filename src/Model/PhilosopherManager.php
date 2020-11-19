@@ -37,16 +37,17 @@ class PhilosopherManager extends AbstractManager
     {
         // prepared request
         $statement = $this->pdo->prepare("
-        INSERT INTO " . self::TABLE . " (`name`, `url`, `quote`, `nb_vote`, `movement`, `nationality`, `job`, `comments`) 
-        VALUES (:name, :url, :quote, :nb_vote, :movement, :nationality, :job, :comments)");
+        INSERT INTO " . self::TABLE . " (`name`, `url`, `quote`, `nb_vote`, `style`, `nationality`, `job`, `comments`, `artist`) 
+        VALUES (:name, :url, :quote, :nb_vote, :style, :nationality, :job, :comments, :artist)");
         $statement->bindValue('name', $philosopher['name'], \PDO::PARAM_STR);
         $statement->bindValue('url', $philosopher['url'], \PDO::PARAM_STR);
         $statement->bindValue('quote', $philosopher['quote'], \PDO::PARAM_STR);
         $statement->bindValue('nb_vote', $philosopher['nb_vote'], \PDO::PARAM_INT);
-        $statement->bindValue('movement', $philosopher['movement'], \PDO::PARAM_STR);
+        $statement->bindValue('style', $philosopher['style'], \PDO::PARAM_STR);
         $statement->bindValue('nationality', $philosopher['nationality'], \PDO::PARAM_STR);
         $statement->bindValue('job', $philosopher['job'], \PDO::PARAM_STR);
         $statement->bindValue('comments', $philosopher['comments'], \PDO::PARAM_STR);
+        $statement->bindValue('artist', $philosopher['artist'], \PDO::PARAM_STR);
 
         if ($statement->execute()) {
             return (int)$this->pdo->lastInsertId();
@@ -73,16 +74,19 @@ class PhilosopherManager extends AbstractManager
     public function update(array $philosopher):bool
     {
         // prepared request
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . "SET `name` = :name, `url` = :url, `quote` = :quote, `nb_vote` = :nb_vote, `movement` = :movement, `nationality` = :nationality, `job` = :job, `comments` = :comments WHERE id=:id");
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . 
+        "SET `name` = :name, `url` = :url, `quote` = :quote, `nb_vote` = :nb_vote, `style` = :style, `nationality` = :nationality, `job` = :job, `comments` = :comments, `artist` =:artist WHERE id=:id");
         $statement->bindValue('id', $philosopher['id'], \PDO::PARAM_INT);
         $statement->bindValue('name', $philosopher['name'], \PDO::PARAM_STR);
         $statement->bindValue('url', $philosopher['url'], \PDO::PARAM_STR);
         $statement->bindValue('quote', $philosopher['quote'], \PDO::PARAM_STR);
         $statement->bindValue('nb_vote', $philosopher['nb_vote'], \PDO::PARAM_INT);
-        $statement->bindValue('movement', $philosopher['movement'], \PDO::PARAM_STR);
+        $statement->bindValue('style', $philosopher['style'], \PDO::PARAM_STR);
         $statement->bindValue('nationality', $philosopher['nationality'], \PDO::PARAM_STR);
         $statement->bindValue('job', $philosopher['job'], \PDO::PARAM_STR);
         $statement->bindValue('comments', $philosopher['comments'], \PDO::PARAM_STR);
+        $statement->bindValue('artist', $philosopher['artist'], \PDO::PARAM_STR);
+        
 
         return $statement->execute();
     }

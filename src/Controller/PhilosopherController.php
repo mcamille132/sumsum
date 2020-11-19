@@ -71,10 +71,11 @@ class PhilosopherController extends AbstractAPIController
                     'url' => $_POST['url'],
                     'quote' => $_POST['quote'],
                     'nb_vote' => $_POST['nb_vote'],
-                    'movement' => $_POST['movement'],
+                    'style' => $_POST['style'],
                     'nationality' => $_POST['nationality'],
                     'job' => $_POST['job'],
-                    'comments' => $_POST['comments']
+                    'comments' => $_POST['comments'],
+                    'artist' => $_POST['artist']
                 ];
                 $philosopherManager->update($philosopher);
                 return json_encode($id." updated", 200);
@@ -103,10 +104,11 @@ class PhilosopherController extends AbstractAPIController
                     'url' => $_POST['url'],
                     'quote' => $_POST['quote'],
                     'nb_vote' => $_POST['nb_vote'],
-                    'movement' => $_POST['movement'],
+                    'style' => $_POST['style'],
                     'nationality' => $_POST['nationality'],
                     'job' => $_POST['job'],
-                    'comments' => $_POST['comments']
+                    'comments' => $_POST['comments'],
+                    'artist' => $_POST['artist']
                 ];
                 $id = $philosopherManager->insert($philosopher);
                 return json_encode($id, 200);

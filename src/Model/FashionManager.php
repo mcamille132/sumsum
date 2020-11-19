@@ -36,14 +36,14 @@ class FashionManager extends AbstractManager
     {
         // prepared request
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " 
-        (`name`, `url`, `creator`, `nb_vote`, `baseline`, `localisation`, `comments`) 
-        VALUES (:name, :url, :creator, :nb_vote, :baseline, :localisation, :comments)");
+        (`name`, `url`, `artist`, `nb_vote`, `style`, `nationality`, `comments`) 
+        VALUES (:name, :url, :artist, :nb_vote, :style, :nationality, :comments)");
         $statement->bindValue('name', $fashion['name'], \PDO::PARAM_STR);
         $statement->bindValue('url', $fashion['url'], \PDO::PARAM_STR);
-        $statement->bindValue('creator', $fashion['creator'], \PDO::PARAM_STR);
+        $statement->bindValue('artist', $fashion['artist'], \PDO::PARAM_STR);
         $statement->bindValue('nb_vote', $fashion['nb_vote'], \PDO::PARAM_INT);
-        $statement->bindValue('baseline', $fashion['baseline'], \PDO::PARAM_STR);
-        $statement->bindValue('localisation', $fashion['localisation'], \PDO::PARAM_STR);
+        $statement->bindValue('style', $fashion['style'], \PDO::PARAM_STR);
+        $statement->bindValue('nationality', $fashion['nationality'], \PDO::PARAM_STR);
         $statement->bindValue('comments', $fashion['comments'], \PDO::PARAM_STR);
 
         if ($statement->execute()) {
@@ -72,14 +72,14 @@ class FashionManager extends AbstractManager
     {
 
         // prepared request
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `id`=:id, `name`=:name, `url`=:url, `creator`=:creator, `nb_vote`=:nb_vote, `baseline`=:baseline, `localisation`=:localisation, `comments`=:comments WHERE id=:id");
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `id`=:id, `name`=:name, `url`=:url, `artist`=:artist, `nb_vote`=:nb_vote, `style`=:style, `nationality`=:nationality, `comments`=:comments WHERE id=:id");
         $statement->bindValue('id', $fashion['id'], \PDO::PARAM_INT);
         $statement->bindValue('name', $fashion['name'], \PDO::PARAM_STR);
         $statement->bindValue('url', $fashion['url'], \PDO::PARAM_STR);
-        $statement->bindValue('creator', $fashion['creator'], \PDO::PARAM_STR);
+        $statement->bindValue('artist', $fashion['artist'], \PDO::PARAM_STR);
         $statement->bindValue('nb_vote', $fashion['nb_vote'], \PDO::PARAM_INT);
-        $statement->bindValue('baseline', $fashion['baseline'], \PDO::PARAM_STR);
-        $statement->bindValue('localisation', $fashion['localisation'], \PDO::PARAM_STR);
+        $statement->bindValue('style', $fashion['style'], \PDO::PARAM_STR);
+        $statement->bindValue('nationality', $fashion['nationality'], \PDO::PARAM_STR);
         $statement->bindValue('comments', $fashion['comments'], \PDO::PARAM_STR);
 
         return $statement->execute();

@@ -70,10 +70,10 @@ class FashionController extends AbstractAPIController
                     'id' => $id,
                     'name' => $_POST['name'],
                     'url' => $_POST['url'],
-                    'creator' => $_POST['creator'],
+                    'artist' => $_POST['artist'],
                     'nb_vote' => $_POST['nb_vote'],
-                    'baseline' => $_POST['baseline'],
-                    'localisation' => $_POST['localisation'],
+                    'style' => $_POST['style'],
+                    'nationality' => $_POST['nationality'],
                     'comments' => $_POST['comments'],
                 ];
                 $fashionManager->update($fashion);
@@ -101,10 +101,10 @@ class FashionController extends AbstractAPIController
                 $fashion = [
                     'name' => $_POST['name'],
                     'url' => $_POST['url'],
-                    'creator' => $_POST['creator'],
+                    'artist' => $_POST['artist'],
                     'nb_vote' => $_POST['nb_vote'],
-                    'baseline' => $_POST['baseline'],
-                    'localisation' => $_POST['localisation'],
+                    'style' => $_POST['style'],
+                    'nationality' => $_POST['nationality'],
                     'comments' => $_POST['comments'],
                 ];
                 $id = $fashionManager->insert($fashion);
