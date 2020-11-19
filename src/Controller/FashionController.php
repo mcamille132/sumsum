@@ -67,6 +67,7 @@ class FashionController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {
                 $fashion = [
+                    'id' => $id,
                     'name' => $_POST['name'],
                     'url' => $_POST['url'],
                     'creator' => $_POST['creator'],
