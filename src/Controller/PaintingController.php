@@ -72,6 +72,7 @@ class PaintingController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {
                 $painting = [
+                    'id' => $id,
                     'name' => $_POST['name'],
                     'url' => $_POST['url'],
                     'artist' => $_POST['artist'],
