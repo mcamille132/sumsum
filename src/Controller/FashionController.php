@@ -63,7 +63,7 @@ class FashionController extends AbstractController
     public function edit($id): string
     {
         $fashionManager = new FashionManager();
-        $fashionManager->selectOneById($id);
+        $fashion = $fashionManager->selectOneById($id);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {
                 $fashion = [
