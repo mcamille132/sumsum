@@ -11,6 +11,7 @@
 namespace App\Controller;
 
 use App\Model\PhilosopherManager;
+use Exception;
 
 /**
  * Class ItemController
@@ -26,12 +27,9 @@ class PhilosopherController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    //all//
-    public function index()
+    public function all()
     {
         $philosopherManager = new PhilosopherManager();
-        $philosophers = $philosopherManager->selectAll();
-
         return json_encode($philosopherManager->selectAll());
     }
 
@@ -45,12 +43,10 @@ class PhilosopherController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function show()
+    public function show($id)
     {
         $philosopherManager = new PhilosopherManager();
-        $philosophers = $philosopherManager->selectOneById();
-
-        return json_encode($philosopherManager->selectOneById());
+        return json_encode($philosopherManager->selectOneById($id));
     }
 
 
@@ -63,13 +59,13 @@ class PhilosopherController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    //update//
-    public function edit($id)
+    public function edit(int $id): string
     {
         $philosopherManager = new PhilosopherManager();
-        if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-            try{
-                $philosopher = [ 
+        $philosopher = $philosopherManager->selectOneById($id);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            try {
+                $philosopher = [
                     'id' => $id,
                     'name' => $_POST['name'],
                     'url' => $_POST['url'],
@@ -80,9 +76,9 @@ class PhilosopherController extends AbstractController
                     'job' => $_POST['job'],
                     'comments' => $_POST['comments']
                 ];
-            $philosopherManager->edit($philosopher);
-            return json_encode($id." edit", 200);
-            }   catch(Exception $e){
+                $philosopherManager->update($philosopher);
+                return json_encode($id." updated", 200);
+            } catch (Exception $e) {
                 return json_encode($e->getMessage());
             }
         }
@@ -97,26 +93,25 @@ class PhilosopherController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    //create//
     public function add()
     {
         $philosopherManager = new PhilosopherManager();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            try{
-            $philosopher = [
-                'name' => $_POST['name'],
-                'url' => $_POST['url'],
-                'quote' => $_POST['quote'],
-                'nb_vote' => $_POST['nb_vote'],
-                'movement' => $_POST['movement'],
-                'nationality' => $_POST['nationality'],
-                'job' => $_POST['job'],
-                'comments' => $_POST['comments']
-            ];
-            $id = $philosopherManager->insert($philosopher);
-            return json_encode($id, 200);
-        }catch (Exeption $e){
-            return json_encode($e->getMessage());
+            try {
+                $philosopher = [
+                    'name' => $_POST['name'],
+                    'url' => $_POST['url'],
+                    'quote' => $_POST['quote'],
+                    'nb_vote' => $_POST['nb_vote'],
+                    'movement' => $_POST['movement'],
+                    'nationality' => $_POST['nationality'],
+                    'job' => $_POST['job'],
+                    'comments' => $_POST['comments']
+                ];
+                $id = $philosopherManager->insert($philosopher);
+                return json_encode($id, 200);
+            } catch (Exeption $e) {
+                return json_encode($e->getMessage());
             }
         }
     }
@@ -127,13 +122,13 @@ class PhilosopherController extends AbstractController
      *
      * @param int $id
      */
-    public function delete(int $id)
+    public function delete($id)
     {
         $philosopherManager = new PhilosopherManager();
-        try{
+        try {
             $philosopherManager->delete($id);
             return json_encode($id." deleted", 200);
-        }catch (Exception $e){
+        } catch (Exception $e) {
             return json_encode($e->getMessage());
         }
     }

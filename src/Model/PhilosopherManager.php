@@ -57,7 +57,7 @@ class PhilosopherManager extends AbstractManager
     /**
      * @param int $id
      */
-    public function delete(int $philosopher): void
+    public function delete(int $id)
     {
         // prepared request
         $statement = $this->pdo->prepare("DELETE FROM " . self::TABLE . " WHERE id=:id");
