@@ -10,7 +10,7 @@
 
 namespace App\Controller;
 use Exception;
-use PHP_CodeSniffer\Reports\json;
+
 
 use App\Model\MusicManager;
 
@@ -49,9 +49,7 @@ class MusicController extends AbstractController
     public function show(int $id)
     {
         $musicManager = new MusicManager();
-        $music = $musicManager->selectOneById($id);
-
-        return $this->twig->render('Music/show.html.twig', ['music' => $music]);
+        return json_encode($musicManager->selectOneById($id));
     }
 
 
@@ -67,6 +65,8 @@ class MusicController extends AbstractController
     public function edit(int $id): string
     {
         $musicManager = new MusicManager();
+        $music = $musicManager->selectOneById($id);
+
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try{
@@ -80,7 +80,7 @@ class MusicController extends AbstractController
                 'comments' => $_POST['comments']
                 ];
                 $musicManager->update($music);
-                return json_encode($id."updated", 200);
+                return json_encode($id." updated", 200);
             }catch (Exception $e){
                 return json_encode($e->getMessage());
             }
@@ -103,8 +103,6 @@ class MusicController extends AbstractController
         $musicManager = new MusicManager();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try{
-
-            
             $music = [
                 'name' => $_POST['name'],
                 'url' => $_POST['url'],
