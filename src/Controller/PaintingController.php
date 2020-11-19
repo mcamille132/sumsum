@@ -17,7 +17,7 @@ use Exception;
  * Class ItemController
  *
  */
-class PaintingController extends AbstractController
+class PaintingController extends AbstractAPIController
 {
     /**
      * Display item listing

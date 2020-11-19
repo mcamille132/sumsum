@@ -16,7 +16,7 @@ use Exception;
  * Class FashionController
  *
  */
-class FashionController extends AbstractController
+class FashionController extends AbstractAPIController
 {
 
 
