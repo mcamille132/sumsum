@@ -73,19 +73,9 @@ class PhilosopherManager extends AbstractManager
     public function update(array $philosopher):bool
     {
         // prepared request
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . 
-        "SET `name` = :name, `url` = :url, `nb_vote` = :nb_vote, `style` = :style, `nationality` = :nationality, `job` = :job, `comments` = :comments, `artist` =:artist WHERE id=:id");
+        $statement = $this->pdo->prepare("UPDATE philosopher SET nb_vote=:nb_vote WHERE id=:id");
         $statement->bindValue('id', $philosopher['id'], \PDO::PARAM_INT);
-        $statement->bindValue('name', $philosopher['name'], \PDO::PARAM_STR);
-        $statement->bindValue('url', $philosopher['url'], \PDO::PARAM_STR);
         $statement->bindValue('nb_vote', $philosopher['nb_vote'], \PDO::PARAM_INT);
-        $statement->bindValue('style', $philosopher['style'], \PDO::PARAM_STR);
-        $statement->bindValue('nationality', $philosopher['nationality'], \PDO::PARAM_STR);
-        $statement->bindValue('job', $philosopher['job'], \PDO::PARAM_STR);
-        $statement->bindValue('comments', $philosopher['comments'], \PDO::PARAM_STR);
-        $statement->bindValue('artist', $philosopher['artist'], \PDO::PARAM_STR);
-        
-
         return $statement->execute();
     }
     

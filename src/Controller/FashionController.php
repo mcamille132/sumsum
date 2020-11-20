@@ -68,16 +68,10 @@ class FashionController extends AbstractAPIController
             try {
                 $fashion = [
                     'id' => $id,
-                    'name' => $_POST['name'],
-                    'url' => $_POST['url'],
-                    'artist' => $_POST['artist'],
-                    'nb_vote' => $_POST['nb_vote'],
-                    'style' => $_POST['style'],
-                    'nationality' => $_POST['nationality'],
-                    'comments' => $_POST['comments'],
+                    'nb_vote' => $fashion['nb_vote'] + 1
                 ];
                 $fashionManager->update($fashion);
-                return json_encode($id." updated", 200);
+                return json_encode($fashion['nb_vote'], 200);
             } catch (Exception $e) {
                 return json_encode($e->getMessage());
             }

@@ -12,7 +12,7 @@ use App\Model\PhilosopherManager;
 use App\Model\MusicManager;
 use App\Model\FashionManager;
 
-class HomeController extends AbstractAPIController
+class HomeController extends AbstractController
 {
 
     /**
@@ -23,27 +23,20 @@ class HomeController extends AbstractAPIController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function topPainting()
+    public function index()
     {
+        $top = [];
         $paintingManager = new PaintingManager();
-        return json_encode($paintingManager->getTop());
-    }
-
-    public function topMusic()
-    {
+        $painting = $paintingManager->getTop();
         $musicManager = new MusicManager();
-        return json_encode($musicManager->getTop());
-    }
-
-    public function topFashion()
-    {
+        $music = $musicManager->getTop();
         $fashionManager = new FashionManager();
-        return json_encode($fashionManager->getTop());
-    }
-
-    public function topPhilosopher()
-    {
+        $fashion = $fashionManager->getTop();
         $philosopherManager = new PhilosopherManager();
-        return json_encode($philosopherManager->getTop());
+        $philosopher = $philosopherManager->getTop();
+        
+        $top = [$painting,$music, $fashion, $philosopher];
+        return json_encode($top);
+        
     }
 }

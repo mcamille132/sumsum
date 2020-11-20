@@ -72,15 +72,10 @@ class FashionManager extends AbstractManager
     {
 
         // prepared request
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `id`=:id, `name`=:name, `url`=:url, `artist`=:artist, `nb_vote`=:nb_vote, `style`=:style, `nationality`=:nationality, `comments`=:comments WHERE id=:id");
+        $statement = $this->pdo->prepare("UPDATE fashion SET nb_vote=:nb_vote WHERE id=:id");
         $statement->bindValue('id', $fashion['id'], \PDO::PARAM_INT);
-        $statement->bindValue('name', $fashion['name'], \PDO::PARAM_STR);
         $statement->bindValue('url', $fashion['url'], \PDO::PARAM_STR);
-        $statement->bindValue('artist', $fashion['artist'], \PDO::PARAM_STR);
-        $statement->bindValue('nb_vote', $fashion['nb_vote'], \PDO::PARAM_INT);
-        $statement->bindValue('style', $fashion['style'], \PDO::PARAM_STR);
-        $statement->bindValue('nationality', $fashion['nationality'], \PDO::PARAM_STR);
-        $statement->bindValue('comments', $fashion['comments'], \PDO::PARAM_STR);
+        
 
         return $statement->execute();
     }

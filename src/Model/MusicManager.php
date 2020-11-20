@@ -68,27 +68,10 @@ class MusicManager extends AbstractManager
     public function update(array $music): bool
     {
         // prepared request
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE .  " SET
-        `id` = :id,
-        `name` = :name,
-        `url` = :url,
-        `artist` = :artist,
-        `nb_vote` = :nb_vote,
-        `style` = :style,
-        `nationality` = :nationality,
-        `comments` = :comments
-
-
-        WHERE id=:id"
+        $statement = $this->pdo->prepare("UPDATE music SET nb_vote=:nb_vote WHERE id=:id"
     );
         $statement->bindValue('id', $music['id'], \PDO::PARAM_INT);
-        $statement->bindValue('name', $music['name'], \PDO::PARAM_STR);
-        $statement->bindValue('url', $music['url'], \PDO::PARAM_STR);
-        $statement->bindValue('artist', $music['artist'], \PDO::PARAM_STR);
         $statement->bindValue('nb_vote', $music['nb_vote'], \PDO::PARAM_INT);
-        $statement->bindValue('style', $music['style'], \PDO::PARAM_STR);
-        $statement->bindValue('nationality', $music['nationality'], \PDO::PARAM_STR);
-        $statement->bindValue('comments', $music['comments'], \PDO::PARAM_STR);
 
         return $statement->execute();
     }

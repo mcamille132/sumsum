@@ -73,16 +73,10 @@ class PaintingController extends AbstractAPIController
             try {
                 $painting = [
                     'id' => $id,
-                    'name' => $_POST['name'],
-                    'url' => $_POST['url'],
-                    'artist' => $_POST['artist'],
-                    'nb_vote' => $_POST['nb_vote'],
-                    'style' => $_POST['style'],
-                    'nationality' => $_POST['nationality'],
-                    'comments' => $_POST['comments']
+                    'nb_vote' => $painting['nb_vote'] + 1
                 ];
                 $paintingManager->update($painting);
-                return json_encode($id. "updated", 200);
+                return json_encode($painting['nb_vote'], 200);
                 
             } catch (Exception $e) {
                 return json_encode($e->getMessage());

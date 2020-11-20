@@ -67,17 +67,11 @@ class PhilosopherController extends AbstractAPIController
             try {
                 $philosopher = [
                     'id' => $id,
-                    'name' => $_POST['name'],
-                    'url' => $_POST['url'],
-                    'nb_vote' => $_POST['nb_vote'],
-                    'style' => $_POST['style'],
-                    'nationality' => $_POST['nationality'],
-                    'job' => $_POST['job'],
-                    'comments' => $_POST['comments'],
-                    'artist' => $_POST['artist']
+                    'nb_vote' => $philosopher['nb_vote'] + 1
                 ];
+                    
                 $philosopherManager->update($philosopher);
-                return json_encode($id." updated", 200);
+                return json_encode($philosopher['nb_vote'], 200);
             } catch (Exception $e) {
                 return json_encode($e->getMessage());
             }

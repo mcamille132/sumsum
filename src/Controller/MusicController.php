@@ -71,16 +71,11 @@ class MusicController extends AbstractAPIController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try{
             $music = [
-                'name' => $_POST['name'],
-                'url' => $_POST['url'],
-                'artist' => $_POST['artist'],
-                'nb_vote' => $_POST['nb_vote'],
-                'style' => $_POST['style'],
-                'nationality' => $_POST['nationality'],
-                'comments' => $_POST['comments']
+                'id' => $id,
+                'nb_vote' => $music['nb_vote'] + 1
                 ];
                 $musicManager->update($music);
-                return json_encode($id." updated", 200);
+                return json_encode($music['nb_vote'], 200);
             }catch (Exception $e){
                 return json_encode($e->getMessage());
             }

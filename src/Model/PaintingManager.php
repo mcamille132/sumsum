@@ -67,17 +67,9 @@ class PaintingManager extends AbstractManager
     public function update(array $item): bool
     {
         // prepared request
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " 
-        SET `name` = :name, `url` = :url, `artist` = :artist, `nb_vote` = :nb_vote, `style` = :style, `nationality` = :nationality, `comments` = :comments 
-        WHERE id=:id");
+        $statement = $this->pdo->prepare("UPDATE painting SET nb_vote=:nb_vote WHERE id=:id");
         $statement->bindValue('id', $item['id'], \PDO::PARAM_INT);
-        $statement->bindValue('name', $item['name'], \PDO::PARAM_STR);
-        $statement->bindValue('url', $item['url'], \PDO::PARAM_STR);
-        $statement->bindValue('artist', $item['artist'], \PDO::PARAM_STR);
         $statement->bindValue('nb_vote', $item['nb_vote'], \PDO::PARAM_INT);
-        $statement->bindValue('style', $item['style'], \PDO::PARAM_STR);
-        $statement->bindValue('nationality', $item['nationality'], \PDO::PARAM_STR);
-        $statement->bindValue('comments', $item['comments'], \PDO::PARAM_STR);
 
         return $statement->execute();
     }
