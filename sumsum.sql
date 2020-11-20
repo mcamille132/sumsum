@@ -101,10 +101,10 @@ INSERT INTO `music` (`id`, `name`, `url`, `artist`, `nb_vote`, `style`, `nationa
 (21, 'Obsecro te', 'https://i.postimg.cc/9f6LttTz/josquin.png', 'Ariel Abramovich', 632, 'classic', 'spanish', 'Best artist ever ! '),
 (22, 'Mon souverin desirs', 'https://i.postimg.cc/y8V40BK2/gille-benichoi.png', 'Gilles binchois', 4565, 'Barok', 'French', 'This song is so amazing'),
 (23, 'Ave maris stella ', 'https://i.postimg.cc/Xqwmy1zV/guillaumedufaye.png', 'Guillaume Dufay', 3657, 'Religious', 'Italian', 'This is not my favourite song ...'),
-(43, 'Obsecro te', NULL, 'Ariel Abramovich', 632, 'classic', 'spanish', 'Best artist ever ! '),
-(44, 'Mon souverin desirs', NULL, 'Gilles binchois', 4565, 'Barok', 'French', 'This song is so amazing'),
-(45, 'Ave maris stella ', NULL, 'Guillaume Dufay', 3657, 'Religious', 'Italian', 'This is not my favourite song ...'),
-(46, 'Bagatella N25', NULL, 'Bethoven', 7894, 'classic', 'Autrichian', 'Bethoven is a rockstar !!!!');
+(24, 'Obsecro te', 'https://i.postimg.cc/9f6LttTz/josquin.png', 'Ariel Abramovich', 632, 'classic', 'spanish', 'Best artist ever ! '),
+(25, 'Mon souverin desirs', 'https://i.postimg.cc/y8V40BK2/gille-benichoi.png', 'Gilles binchois', 4565, 'Barok', 'French', 'This song is so amazing'),
+(26, 'Ave maris stella ', 'https://i.postimg.cc/Xqwmy1zV/guillaumedufaye.png', 'Guillaume Dufay', 3657, 'Religious', 'Italian', 'This is not my favourite song ...');
+
 
 --
 -- Indexes for dumped tables
