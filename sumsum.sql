@@ -152,9 +152,28 @@ INSERT INTO `painting` (`id`, `name`, `url`, `artist`, `nb_vote`, `style`, `nati
 (7, 'The Arnolfini couple', 'https://i.postimg.cc/bvm8D1PW/lespouxa.png', 'Jan Van Eyck', 322, 'Flemish primitive', 'Belgian', 'It is the most beautiful painting that I have seen in the world'),
 (8, 'Persée and Andromède', 'https://i.pixxxels.cc/3JGKSyj0/persee.png', 'Giogino Vasari', 675, 'Renaissance', 'Italian', 'Oh it\'s georgous'),
 (9, 'The vocation of Saint-Marthe', 'https://i.postimg.cc/BZYL911h/lavocation.png', 'Michelangelo Merisi da Caravaggio', 735, 'Baroque', 'Italian', 'The scene is interesting'),
-(10, 'The creation of Adam', 'https://i.postimg.cc/8CNPr16J/michelange-la-creation.png\r\n', 'Michel-Ange', 567, 'High Renaissance', 'Italian', 'The details are splendid'),
-(11, 'The garden of delights\r\n', 'https://i.postimg.cc/4xy6nLyV/Lejardindesdelices.jpg', 'Jêrome Bosch', 745, 'Flemish primitive', 'Dutch', 'It\'s so funny !'),
-(12, 'Saint-Marc', 'https://i.postimg.cc/VLdvC39f/saintmarc.jpg', 'Andrea Mantegna', 870, 'Italian school', 'Italian', 'Interest!');
+(10, 'The creation of Adam', 'https://i.postimg.cc/8CNPr16J/michelange-la-creation.png', 'Michel-Ange', 567, 'High Renaissance', 'Italian', 'The details are splendid'),
+(11, 'The garden of delights', 'https://i.postimg.cc/4xy6nLyV/Lejardindesdelices.jpg', 'Jêrome Bosch', 745, 'Flemish primitive', 'Dutch', 'It\'s so funny !'),
+(12, 'Saint-Marc', 'https://i.postimg.cc/VLdvC39f/saintmarc.jpg', 'Andrea Mantegna', 870, 'Italian school', 'Italian', 'Interest!'),
+(13, 'The Lover', 'https://i.postimg.cc/1tG6bb7h/lesamoureux.jpg', 'Lucas Granach l\'Ancien', 712, 'High Renaissance', 'German', 'Dark but intense color'),
+(14, 'The wedding feast of Cana', 'https://i.postimg.cc/xCDMx9R3/lesnocesdecana.jpg', 'Paul Véronèse', 980, 'Mannerism', 'Italian', 'This painting makes me want to feast with them!'),
+(15, 'The Virgin and Child', 'https://i.postimg.cc/90Nfkp2H/viergealenfant.jpg', 'Albrecht Dürer', 125, 'Religious Painting', 'German', 'The red is really sublime'),
+(16, 'Retable de Fano', 'https://i.postimg.cc/yNFkNcm0/retabledefano.jpg', 'Le Pérugin', 444, 'Religious Painting', 'Italian', 'The prospect is grandiose'),
+(17, 'Madone de Stuppach', 'https://i.postimg.cc/bN30ycyq/laviergedesstuppach.jpg', 'Matthias Grünewald', 22, 'Religious Painting', 'German', 'Too much color mixing'),
+(18, 'Flemish Proverbs', 'https://i.postimg.cc/tJD64WHB/lesproverbesflamand.jpg', 'Pieter Brueghel l\'Ancien', 65, 'Nordic Renaissance', 'Belgian', 'Lots of detail in this painting, it makes it intriguing'),
+(19, 'The portrait of François the first', 'https://i.postimg.cc/MTmM9VXz/portraitdefrancois1er.jpg', 'Jean Clouet', 209, 'Flemish realism', 'Netherlands', 'It makes me want to have a portrait of myself in the same spirit'),
+(20, 'Portrait Of Thomas More', 'https://i.postimg.cc/x8dCgZWP/portraitdunhomme.jpg', 'Hans Holbein le Jeune', 752, 'Portrait', 'German', 'He\'s a little scary'),
+(21, 'Portrait Of A Lady', 'https://i.postimg.cc/wTvyktzd/portraitdunedame.jpg', 'Rogier van der Weyden', 93, 'Flemish Primitif', 'Belgian', 'The proportions are not really respected'),
+(22, 'The miracle of the slave', 'https://i.postimg.cc/DyjsVr6Z/miracledelesclave.jpg', 'Tintoret', 553, 'Sacred art', 'French', 'hmm what can happen in this scene?'),
+(23, 'Saint George slaying the dragon', 'https://i.postimg.cc/bJpdSrgW/saintgeorgeterrassantledragon.jpg', 'Paolo Uccello', 99, 'Sacred Art', 'Italian', 'I Love Dragon'),
+(24, 'Laura', 'https://i.postimg.cc/V6nBmJ6h/Laura.jpg', 'Giorgione', 264, 'High Renaissance', 'Italian', 'The black background perfectly brings out the pale complexion of the girl'),
+(25, 'The Flagellation of Christ', 'https://i.postimg.cc/3xxBmrSy/laflagellationduchrist.jpg', 'Piero della Francesca', 12, 'First Renaissance', 'Italian', 'Pretty color'),
+(26, 'Madone Alzano', 'https://i.postimg.cc/BZhttqK7/viergealenfant-GB.jpg', ' Giovanni Bellini', 666, 'Sacred Art', 'Italian', 'Another virgin and child?'),
+(27, 'Virgin and Child', 'https://i.postimg.cc/NfSM7pb1/viergealenfant-V.jpg', 'Andrea del Verrocchio', 453, 'Sacred Art', 'Italian', 'The mischievous-looking child'),
+(28, 'Saint Jean Baptiste', 'https://i.postimg.cc/JzHs99t6/saintjeanbaptiste.jpg', 'Andrea del Sarto', 88, 'Sacred Art', 'Italian', 'Oh what a handsome man'),
+(29, 'The Virgin and Child', 'https://i.postimg.cc/ZRHn8mDR/Thevirginandthechildwithstgeorge.jpg', 'Pisanello', 560, 'Basse Renaissance', 'Italian', 'Pretty golden color'),
+(30, 'The Dance of Salome', 'https://i.postimg.cc/ZnzHdr2Z/ladansedesalome.jpg', 'Benozzo Gozzoli', 486, 'Frist Renaissane', 'Italian', 'I Love the movement'),
+(58, 'The Dance of Salome', 'https://i.postimg.cc/ZnzHdr2Z/ladansedesalome.jpg', 'Benozzo Gozzoli', 486, 'Frist Renaissane', 'Italian', 'I Love the movement');
 
 --
 -- Indexes for dumped tables
