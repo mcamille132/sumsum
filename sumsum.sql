@@ -4,9 +4,9 @@ USE sumsum;
 
 CREATE TABLE `fashion` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `url` longtext,
   `artist` varchar(255) DEFAULT NULL,
+  `url` longtext,
+  `name` varchar(255) DEFAULT NULL,
   `nb_vote` int(11) DEFAULT NULL,
   `style` varchar(255) DEFAULT NULL,
   `nationality` varchar(255) DEFAULT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE `fashion` (
 -- Dumping data for table `fashion`
 --
 
-INSERT INTO `fashion` (`id`, `name`, `url`, `artist`, `nb_vote`, `style`, `nationality`, `comments`) VALUES
+INSERT INTO `fashion` (`id`, `artist`, `url`, `name`, `nb_vote`, `style`, `nationality`, `comments`) VALUES
 (1, 'Cap-hat', 'https://i.postimg.cc/15F6Zr19/hats.png', 'Cunegonde de Villia', 200, 'To feel in the city as well as in the countryside', 'France', 'The explosive mix of Franco-Italian elegance'),
 (2, 'Italian Headdress', 'https://i.postimg.cc/wTR5jdLY/depressif.png', 'Angelina Bottecina', 100, 'The must have to be the star of your event', 'Italia', 'Even better than the ruffle collar'),
 (3, 'English Headdress', 'https://i.postimg.cc/mgNHPZrJ/englishdress.png', 'Roxane of Wessex', 390, 'Old fashioned style for classic fashion outfit', 'England', 'So old-fashioned! '),
@@ -152,7 +152,7 @@ CREATE TABLE `philosopher` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `url` longtext,
-  `citation` longtext,
+  `artist` longtext,
   `nb_vote` int(11) DEFAULT NULL,
   `style` varchar(255) DEFAULT NULL,
   `nationality` varchar(255) DEFAULT NULL,
@@ -164,7 +164,7 @@ CREATE TABLE `philosopher` (
 -- Dumping data for table `philosopher`
 --
 
-INSERT INTO `philosopher` (`id`, `name`, `url`, `citation`, `nb_vote`, `style`, `nationality`, `job`, `comments`) VALUES
+INSERT INTO `philosopher` (`id`, `name`, `url`, `artist`, `nb_vote`, `style`, `nationality`, `job`, `comments`) VALUES
 (1, 'George Berkeley', 'https://i.postimg.cc/fW6FZdbw/georgeberkeley.jpg', 'What we say about the absolute existence of non-thinking things, unrelated to a perception we might have of them, seems to me perfectly unintelligible. Their esse is percipi it is impossible that they have an existence outside the intelligences or thinking things which perceive them.', 891, 'The denunciation of intolerance and religious fanaticism.', 'Irish', 'Priest, philosopher, politician, writer, theorist and practitioner of education.', 'George Berkeley is a great Irish philosopher.'),
 (2, 'Hugo Kollataj', 'https://i.postimg.cc/Pf836qQ0/kollataj-hugo.jpg', 'We must shake up life otherwise it eats away at us. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis iste numquam, expedita perferendis, reprehenderit ullam velit laudantium sapiente illo aliquam cupiditate? Quas quis facere ut esse aliquam culpa accusantium neque?', 690, 'The denunciation of intolerance and religious fanaticism', 'Ukrainian', 'Priest, philosopher, politician, writer, theorist and practitioner of education.', 'Francis Hutcheson is a great Ukrainian philosopher.'),
 (3, 'Jean-Jacques Rousseau', 'https://i.postimg.cc/7PBgqZRL/9.png', 'Freedom is the power to choose our own chains. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis iste numquam, expedita perferendis, reprehenderit ullam velit laudantium sapiente illo aliquam cupiditate? Quas quis facere ut esse aliquam culpa accusantium neque?', 274, 'The fight against injustice and ignorance.', 'French', 'Musician, philosopher', 'Rousseau is a great philosopher working for freedom.'),
@@ -191,6 +191,7 @@ INSERT INTO `philosopher` (`id`, `name`, `url`, `citation`, `nb_vote`, `style`, 
 (24, 'De Vinci ', 'https://i.postimg.cc/gcw5fsmS/1-2.jpg', 'You have defined man as the King of Animals. I on the other hand, I will say that the man is the king of the ferocious beasts among which you are the greatest. Did you not actually kill and eat the animals to satisfy the pleasures of your palate, turning yourself into a grave for all these animals? Does not nature produce enough plant food to keep you full ?', 613, 'The fight against injustice and ignorance.', 'Italian', 'Scientist, engineer, inventor, anatomist, painter, sculptor, architect, town planner, botanist, musician, poet, philosopher and writer.', 'De Vinci is a great Italian philosopher.'),
 (25, 'Louis de Jaucourt', 'https://i.postimg.cc/02YtsH3f/unamed.jpg', 'It is the purchase of negroes that the Europeans make on the coasts of Africa, to employ these unfortunate people in their colonies as slaves. This purchase of negroes, to reduce them to slavery, is a trade that violates religion, morals, natural laws, and all the rights of human nature.', 362, 'Hostility to slavery.', 'French', 'Philosopher, scholarly collaborator.', 'Louis de Jaucourt is a great French philosopher.'),
 (26, 'Julien Offray de La Mettrie', 'https://i.postimg.cc/SR8gjZKm/lamettrie.jpg', 'Write as if you are alone in the Universe and have nothing to fear from human prejudices. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis iste numquam, expedita perferendis, reprehenderit ullam velit laudantium sapiente illo aliquam cupiditate? Quas quis facere ut esse aliquam culpa accusantium neque?', 148, 'The fight against injustice and ignorance', 'French', 'Materialist and empiricist physician and philosopher.', 'Julien Offray de La Mettrie is a great French philosopher.');
+
 
 --
 -- Indexes for dumped tables
