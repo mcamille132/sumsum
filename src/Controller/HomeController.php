@@ -7,6 +7,10 @@
  */
 
 namespace App\Controller;
+use App\Model\PaintingManager;
+use App\Model\PhilosopherManager;
+use App\Model\MusicManager;
+use App\Model\FashionManager;
 
 class HomeController extends AbstractController
 {
@@ -21,6 +25,18 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Home/index.html.twig');
+        $top = [];
+        $paintingManager = new PaintingManager();
+        $painting = $paintingManager->getTop();
+        $musicManager = new MusicManager();
+        $music = $musicManager->getTop();
+        $fashionManager = new FashionManager();
+        $fashion = $fashionManager->getTop();
+        $philosopherManager = new PhilosopherManager();
+        $philosopher = $philosopherManager->getTop();
+        
+        $top = [$painting,$music, $fashion, $philosopher];
+        return json_encode($top);
+        
     }
 }
