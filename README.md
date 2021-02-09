@@ -15,19 +15,18 @@ Be creative & have fun Wilders !
 * _Issues during the renaissance era ?_  
 Philosophy and art in general is booming, but there is no rapid and effective means of communication in order to make oneself known.
 
-* Inspiration
+* _Inspiration_  
 The application is a mix between instagram & rap contenders, a French concept of battle between two rappers.
 Famous in Canada and in France, this trend opposes to amator rappers that have a few minutes to throw the best Punch Lines at each other… 
 [exemple](https://www.youtube.com/watch?v=bmfAai73OgA&ab_channel=The1995posse)
 
-* Concept
+* _Concept_  
 4 Categories : Philosophy - Painting - Music - Fashion
 Each of them compete for 10 sec and the winner will be elected by the number of like.
 
-Authors
+* _Authors_  
 Wild Code School Student (Océane, Julien, Abdel, Marie-Camille)
 
-[Link for the site](http://www.citizen-court.tech/painting)
 
 This repository are a BackEnd Part
-
+[Link for the site](http://www.citizen-court.tech/painting)
