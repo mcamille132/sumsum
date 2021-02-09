@@ -12,7 +12,7 @@ Be creative & have fun Wilders !
 
 ## Our answer :
 
-* Issues during the renaissance era ? 
+* _Issues during the renaissance era ?_  
 Philosophy and art in general is booming, but there is no rapid and effective means of communication in order to make oneself known.
 
 * Inspiration
