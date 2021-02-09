@@ -13,16 +13,16 @@ Be creative & have fun Wilders !
 ## Our answer :
 
 * Issues during the renaissance era ? 
-`* Philosophy and art in general is booming, but there is no rapid and effective means of communication in order to make oneself known.`
+` Philosophy and art in general is booming, but there is no rapid and effective means of communication in order to make oneself known.`
 
 * Inspiration
-`* The application is a mix between instagram & rap contenders, a French concept of battle between two rappers.`
-`* Famous in Canada and in France, this trend opposes to amator rappers that have a few minutes to throw the best Punch Lines at each other… 
+` The application is a mix between instagram & rap contenders, a French concept of battle between two rappers.`
+` Famous in Canada and in France, this trend opposes to amator rappers that have a few minutes to throw the best Punch Lines at each other… 
 [exemple](https://www.youtube.com/watch?v=bmfAai73OgA&ab_channel=The1995posse)`
 
 * Concept
-`* 4 Categories : Philosophy - Painting - Music - Fashion`
-`* Each of them compete for 10 sec and the winner will be elected by the number of like.`
+` 4 Categories : Philosophy - Painting - Music - Fashion`
+` Each of them compete for 10 sec and the winner will be elected by the number of like.`
 
 Authors
 Wild Code School Student (Océane, Julien, Abdel, Marie-Camille)
