@@ -2,6 +2,8 @@
 
 ## BACK TO THE FUTURE 19-20 November
 
+![ScreenShot](https://i.postimg.cc/CxzX5xwK/citizen-desktop.png)
+
 ## Problematic :
 
 Wilders have the power to travel back in time and bring all their technology with them. 
@@ -27,6 +29,8 @@ Each of them compete for 10 sec and the winner will be elected by the number of 
 ## Authors :
 Wild Code School Student (Océane, Julien, Abdel, Marie-Camille)
 
+
+![ScreenShot](https://i.postimg.cc/YqXTtWKV/citizen-philosopher.png)
 
 This repository are a BackEnd Part
 [Link for the site](http://www.citizen-court.tech/painting)
