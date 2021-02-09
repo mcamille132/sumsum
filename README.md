@@ -3,7 +3,6 @@
 ## BACK TO THE FUTURE 19-20 November
 
 ## Problematic :
----
 
 Wilders have the power to travel back in time and bring all their technology with them. 
 They can explore the period of their choice in order to create an application that can be perfectly adapted to the needs of the times, 
@@ -12,7 +11,6 @@ it can be Prohibition or Middle Ages, Roman Empire, Age of Enlightenment ...
 Be creative & have fun Wilders !
 
 ## Our answer :
----
 
 Issues during the renaissance era ? 
 * Philosophy and art in general is booming, but there is no rapid and effective means of communication in order to make oneself known.
