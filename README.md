@@ -24,7 +24,7 @@ Famous in Canada and in France, this trend opposes to amator rappers that have a
 4 Categories : Philosophy - Painting - Music - Fashion
 Each of them compete for 10 sec and the winner will be elected by the number of like.
 
-* _Authors_  
+## Authors :
 Wild Code School Student (Océane, Julien, Abdel, Marie-Camille)
 
 
