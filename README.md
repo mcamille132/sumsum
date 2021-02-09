@@ -1,8 +1,8 @@
-#HACKATHON WILD CODE SCHOOL
+# HACKATHON WILD CODE SCHOOL
 
-##BACK TO THE FUTURE 19-20 November
+## BACK TO THE FUTURE 19-20 November
 
-##Problematic :
+## Problematic :
 ---
 
 Wilders have the power to travel back in time and bring all their technology with them. 
@@ -11,7 +11,7 @@ it can be Prohibition or Middle Ages, Roman Empire, Age of Enlightenment ...
 
 Be creative & have fun Wilders !
 
-##Our answer :
+## Our answer :
 ---
 
 Issues during the renaissance era ? 
